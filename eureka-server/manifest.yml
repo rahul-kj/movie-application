@@ -1,0 +1,7 @@
+---
+applications:
+- name: eureka-server
+  host: eureka-server
+  memory: 512M
+  instances: 1
+  path: target/eureka-server-0.0.1-SNAPSHOT.jar

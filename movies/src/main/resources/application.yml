@@ -1,0 +1,38 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+      
+endpoints:
+  health:
+    sensitive: false
+
+info:
+  build:
+    artifact: @project.artifactId@
+    name: @project.name@
+    description: @project.description@
+    version: @project.version@      
+
+---
+
+spring:
+  profiles: default
+  jpa:
+    database: HSQL
+
+greeting: Hello
+
+---
+
+spring:
+  profiles: cloud
+  jpa:
+    database: MYSQL
+    
+---
+
+spring:
+  profiles: spanish
+
+greeting: Hola    

@@ -1,0 +1,13 @@
+---
+applications:
+- name: producer
+  host: producer
+  memory: 512M
+  instances: 1
+  path: target/producer-0.0.1-SNAPSHOT.jar
+  env:
+    SPRING_PROFILES_ACTIVE: cloud
+  services:
+  - config-service
+  - eureka-service-registry
+  - movies-cloud-bus-amqp
